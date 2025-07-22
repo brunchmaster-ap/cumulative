@@ -35,6 +35,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="analysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="analysis_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -73,6 +102,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Public opinion about political leaders often depends on where people fall on the ideological spectrum. Using data from the 2020 Cooperative Election Study, one of the largest political surveys in the U.S., we explore how presidential approval varies across different ideological groups. One potential weakness is that unmeasured factors could affect both ideology and approval, making it hard to know if the relationship we see is truly causal.</p>
+<p><span class="math display">\[
+Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_p X_{pi} + \epsilon_i
+\]</span></p>
+<p><span class="math display">\[
+\hat{Approval}_i = 0.75 + 0.40\,Ideology_{i} + 0.02\,Age_{i} - 0.10\,Education_{i}
+\]</span></p>
 
 </main>
 <!-- /main column -->

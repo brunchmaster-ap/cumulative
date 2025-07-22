@@ -9,6 +9,7 @@ execute:
 #| message: false
 library(tidyverse)
 library(primer.data)
+library(broom)
 ```
 
 ```{r}
@@ -33,3 +34,15 @@ x |>
 ```
 
 Public opinion about political leaders often depends on where people fall on the ideological spectrum. Using data from the 2020 Cooperative Election Study, one of the largest political surveys in the U.S., we explore how presidential approval varies across different ideological groups. One potential weakness is that unmeasured factors could affect both ideology and approval, making it hard to know if the relationship we see is truly causal.
+
+$$
+Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_p X_{pi} + \epsilon_i
+$$
+
+$$
+\hat{Approval}_i = 0.75 + 0.40\,Ideology_{i} + 0.02\,Age_{i} - 0.10\,Education_{i}
+$$
+
+```{r}
+#| cache: true
+```
