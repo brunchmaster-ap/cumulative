@@ -33,7 +33,7 @@ x |>
   )
 ```
 
-Public opinion about political leaders often depends on where people fall on the ideological spectrum. Using data from the 2020 Cooperative Election Study, one of the largest political surveys in the U.S., we explore how presidential approval varies across different ideological groups. One potential weakness is that unmeasured factors could affect both ideology and approval, making it hard to know if the relationship we see is truly causal.
+Public opinion about political leaders often depends on where people fall on the ideological spectrum. Using data from the 2020 Cooperative Election Study, one of the largest political surveys in the U.S., we explore how presidential approval varies across different ideological groups. One potential weakness is that unmeasured factors could affect both ideology and approval, making it hard to know if the relationship we see is truly causal. We model presidential approval as a linear function of ideology and other covariates to estimate how these factors relate to support for the president.
 
 $$
 Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_p X_{pi} + \epsilon_i
@@ -45,4 +45,23 @@ $$
 
 ```{r}
 #| cache: true
+```
+
+```{r}
+#| warning: false
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+# Fit a simple model (example)
+model <- lm(approval ~ ideology + age + education, data = ces)
+
+# Tidy the model and select key columns
+model_table <- tidy(model, conf.int = TRUE) %>%
+  select(term, estimate, conf.low, conf.high)
+
+# Make a clean table
+model_table %>%
+  kable(digits = 2, col.names = c("Variable", "Estimate", "Lower CI", "Upper CI")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 ```
