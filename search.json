@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cumulative",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Cumulative",
+    "section": "",
+    "text": "\\[\nY_i = \\beta_0 + \\beta_1 X_{1i} + \\beta_2 X_{2i} + \\cdots + \\beta_p X_{pi} + \\epsilon_i\n\\]\n\\[\n\\hat{Approval}_i = 0.75 + 0.40\\,Ideology_{i} + 0.02\\,Age_{i} - 0.10\\,Education_{i}\n\\]\n\n\n\n\n\nVariable\nEstimate\nLower CI\nUpper CI\n\n\n\n\n(Intercept)\n2.95\nNA\nNA\n\n\nideologyLiberal\n0.12\nNA\nNA\n\n\nideologyModerate\n-0.23\nNA\nNA\n\n\nideologyConservative\n-0.56\nNA\nNA\n\n\nideologyVery Conservative\n-0.50\nNA\nNA\n\n\nideologyNot Sure\n-0.30\nNA\nNA\n\n\nage\n0.00\nNA\nNA\n\n\neducationHigh School Graduate\n-0.04\nNA\nNA\n\n\neducationSome College\n-0.06\nNA\nNA\n\n\neducation2-Year\n-0.02\nNA\nNA\n\n\neducation4-Year\n-0.04\nNA\nNA\n\n\neducationPost-Grad\n-0.03\nNA\nNA\n\n\n\n\n\n\n\nWarning: Removed 876 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nPublic opinion about political leaders often depends on where people fall on the ideological spectrum. Using data from the 2020 Cooperative Election Study, one of the largest political surveys in the U.S., we explore how presidential approval varies across different ideological groups. One potential weakness is that unmeasured factors could affect both ideology and approval, making it hard to know if the relationship we see is truly causal. We model presidential approval as a linear function of ideology and other covariates to estimate how these factors relate to support for the president. Public attitudes toward climate change often vary depending on individuals’ educational backgrounds. Using data from the 2022 National Environmental Survey, one of the most comprehensive studies on environmental beliefs in the U.S., we analyze how concern about climate change differs across education levels. One limitation is that survey participants may not perfectly represent the entire population. We apply an ordinal regression model to capture these variations. Individuals with a college degree tend to express higher concern about climate change by about 3.8 points compared to those without a high school diploma. We are 95% confident that the true effect lies between 3.2 and 4.4 points."
+  }
+]
